@@ -103,7 +103,7 @@ Implementar reglas de negocio a nivel de base de datos para garantizar la consis
 | nom               |      | comanda_id        |      | producte_id (FK)  |
 | preu              |      | producte_id (FK)  |----->| preu_antic        |
 +-------------------+      | unitats           |      | preu_nou          |
-                          +-------------------+      | data_modificacio  |
+                          +-------------------+      | data_modificacio   |
                                 |                   +-------------------+
                                 v
                     +---------------------------+
@@ -112,11 +112,11 @@ Implementar reglas de negocio a nivel de base de datos para garantizar la consis
                     | Rechaza si unitats > 100  |
                     +---------------------------+
 
-+----------------------------------------------------------+
-|              TRIGGER: log_preu_producte                  |
-|              BEFORE UPDATE OF preu                       |
-|              Registra automaticamente cambios en LogsPreus|
-+----------------------------------------------------------+
++-------------------------------------------------------------+
+|              TRIGGER: log_preu_producte                     |
+|              BEFORE UPDATE OF preu                          |
+|              Registra automaticamente cambios en LogsPreus  |
++-------------------------------------------------------------+
 ```
 
 ### Codigo Principal
@@ -158,7 +158,7 @@ Almacenar archivos binarios (imagenes, audio) y documentos XML en Oracle, y cons
 
 ```
 +--------------------------------------------------------------+
-|                      Oracle Database                          |
+|                      Oracle Database                         |
 +--------------------------------------------------------------+
 |  +-----------------+  +-----------------+  +---------------+ |
 |  |ImatgesProducte  |  | AudiosComanda   |  | DocumentsXML  | |
@@ -169,7 +169,7 @@ Almacenar archivos binarios (imagenes, audio) y documentos XML en Oracle, y cons
 |  | format          |  |                 |  |               | |
 |  +-----------------+  +-----------------+  +---------------+ |
 |         |                  |                    |            |
-+---------------------------------------------------------------+
++--------------------------------------------------------------+
 |         |                  |                    |            |
 |         v                  v                    v            |
 |   [Imagenes Binarias]  [Archivos Audio]     [Documentos XML] |
