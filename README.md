@@ -103,8 +103,8 @@ Implementar reglas de negocio a nivel de base de datos para garantizar la consis
 | nom               |      | comanda_id        |      | producte_id (FK)  |
 | preu              |      | producte_id (FK)  |----->| preu_antic        |
 +-------------------+      | unitats           |      | preu_nou          |
-                          +-------------------+      | data_modificacio   |
-                                |                   +-------------------+
+                           +-------------------+      | data_modificacio  |
+                                |                     +-------------------+
                                 v
                     +---------------------------+
                     | TRIGGER: validar_unitats  |
@@ -112,11 +112,11 @@ Implementar reglas de negocio a nivel de base de datos para garantizar la consis
                     | Rechaza si unitats > 100  |
                     +---------------------------+
 
-+-------------------------------------------------------------+
-|              TRIGGER: log_preu_producte                     |
-|              BEFORE UPDATE OF preu                          |
-|              Registra automaticamente cambios en LogsPreus  |
-+-------------------------------------------------------------+
++--------------------------------------------------------------------+
+|              TRIGGER: log_preu_producte                            |
+|              BEFORE UPDATE OF preu                                 |
+|              Registra automaticamente cambios en LogsPreus         |
++--------------------------------------------------------------------+
 ```
 
 ### Codigo Principal
